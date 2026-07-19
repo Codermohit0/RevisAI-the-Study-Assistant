@@ -1,0 +1,7 @@
+streamlit
+pdfplumber
+newspaper3k
+langchain
+langchain-groq
+spacy
+python-dotenv
