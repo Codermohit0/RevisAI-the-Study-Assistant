@@ -10,6 +10,6 @@ def extract_text_from_pdf(file_path):
             full_text += page_text_pdf
     return  full_text
 if __name__ == "__main__":
-    result = extract_text_from_pdf("data/Hands-On_Machine_Learning.pdf")
+    result = extract_text_from_pdf("data/testscen.pdf")
     print(result[:10000])
     
