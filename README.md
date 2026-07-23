@@ -11,7 +11,7 @@ As students, we deal with long PDFs (notes, textbook chapters, research papers) 
 ## Features
 
 - ✅ PDF text extraction (page-wise, handles blank/image-only pages gracefully)
-- 🔲 Website/URL text extraction
+- ✅ Website/URL text extraction
 - 🔲 Text chunking for long documents (map-reduce style)
 - 🔲 Abstractive summarization (BART / Groq LLM)
 - 🔲 Summary length control (short / medium / detailed)
@@ -71,6 +71,12 @@ RevisAI/
   - Text-based PDF — extracted cleanly
   - 2-column research paper (arXiv survey) — text from both columns gets interleaved/mixed since `pdfplumber`'s default extraction follows raw coordinate order, not column order
   - Scanned/image-based PDF — returns empty text as expected (no OCR yet), confirming the `None`-handling logic works correctly without crashing
+
+### Day 4 — Web Scraper
+- Built `extract_text_from_url()` in `utils/web_scraper.py` using `newspaper3k`
+- Downloads and parses a URL, returns `{"title": ..., "text": ...}`
+- Wrapped in `try-except` so failed requests return `{"error": ...}` instead of crashing
+- Fixed an `lxml.html.clean` import error by adding `lxml_html_clean` to `requirements.txt`
 
 ## Known Limitations
 
